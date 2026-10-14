@@ -1,0 +1,369 @@
+---
+import { getImage } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import { hero, recentWork, instagram } from '../data/home';
+import { serviceCards } from '../data/services';
+import { site } from '../data/site';
+
+const heroWidths = [640, 1024, 1600, 2400];
+const heroSizes = '100vw';
+// Preload the AVIF hero so it starts downloading before the CSS is parsed.
+const heroPreload = await getImage({ src: hero.src, widths: heroWidths, format: 'avif' });
+
+const cardSizes =
+  '(min-width: 1240px) 376px, (min-width: 952px) calc((100vw - 112px) / 3), (min-width: 644px) calc((100vw - 84px) / 2), calc(100vw - 56px)';
+const workSizes = [
+  '(min-width: 1240px) 685px, (min-width: 640px) 56vw, calc(100vw - 56px)',
+  '(min-width: 1240px) 488px, (min-width: 640px) 40vw, calc(100vw - 56px)',
+  '(min-width: 1240px) 389px, (min-width: 640px) 32vw, calc(100vw - 56px)',
+  '(min-width: 1240px) 784px, (min-width: 640px) 64vw, calc(100vw - 56px)',
+];
+const instaSizes = '(min-width: 1240px) 190px, (min-width: 640px) 16vw, 50vw';
+---
+
+<Base
+  title="Cinematic Winnipeg — Event Photography, Film & Drone | Winnipeg, MB"
+  description="Event photography, film and licensed drone coverage in Winnipeg, Manitoba. Galas, corporate events, golf tournaments, fundraisers, festivals and carnivals — covered from the ground and the sky, delivered fast."
+>
+  <link
+    slot="head"
+    rel="preload"
+    as="image"
+    type="image/avif"
+    imagesrcset={heroPreload.srcSet.attribute}
+    imagesizes={heroSizes}
+    fetchpriority="high"
+  />
+
+  <section class="hero">
+    <div class="hero__media" data-hero-img>
+      <Photo
+        src={hero.src}
+        alt={hero.alt}
+        sizes={heroSizes}
+        widths={heroWidths}
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="container hero__content" data-stagger>
+      <p class="hero__eyebrow">{site.tagline}</p>
+      <h1 class="hero__title">Large events, captured like a film.</h1>
+      <p class="hero__sub">
+        Galas, corporate events, festivals and carnivals — covered from the ground and the sky, delivered fast.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--gold btn--lg" href="/contact">Book your event</a>
+        <a class="btn btn--outline" href="/portfolio">View work</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-light">
+    <div class="container cover">
+      <div class="section-head" data-reveal>
+        <div class="section-head__text cover__head">
+          <p class="eyebrow eyebrow--deep">What we cover</p>
+          <h2 class="h2">Built for events with hundreds of guests and one chance to get it right.</h2>
+        </div>
+        <a class="link-line" href="/services">All services <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="cards" data-stagger>
+        {
+          serviceCards.map((card) => (
+            <a class="card" href="/services">
+              <div class="media card__media">
+                <Photo src={card.photo.src} alt={card.photo.alt} sizes={cardSizes} />
+              </div>
+              <div class="card__text">
+                <span class="num">{card.num}</span>
+                <h3 class="card__title">{card.title}</h3>
+                <p class="card__blurb">{card.blurb}</p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark">
+    <div class="container work">
+      <div class="section-head" data-reveal>
+        <div class="section-head__text">
+          <p class="eyebrow">Selected work</p>
+          <h2 class="h2 work__title">Recent events</h2>
+        </div>
+        <a class="link-line link-line--dark" href="/portfolio">Full portfolio <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="work-grid" data-stagger>
+        {
+          recentWork.map((photo, i) => (
+            <div class:list={['media media--dark work-tile', `work-tile--${i + 1}`]}>
+              <Photo src={photo.src} alt={photo.alt} sizes={workSizes[i]} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  {
+    site.showInstagram && (
+      <section class="section-light">
+        <div class="container insta">
+          <div class="section-head insta__head" data-reveal>
+            <div class="section-head__text insta__head-text">
+              <p class="eyebrow eyebrow--deep">On Instagram</p>
+              <h2 class="insta__title">{site.instagram.handle}</h2>
+            </div>
+            <a class="link-line" href={site.instagram.url} target="_blank" rel="noopener">
+              Follow <span aria-hidden="true">→</span>
+            </a>
+          </div>
+          <div class="insta-grid" data-stagger>
+            {instagram.map((photo) => (
+              <a class="media insta-tile" href={site.instagram.url} target="_blank" rel="noopener">
+                <Photo src={photo.src} alt={photo.alt} sizes={instaSizes} widths={[400, 640]} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+</Base>
+
+<style>
+  /* ---------- Hero ---------- */
+
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: flex-end;
+    background: var(--ink-black);
+    overflow: hidden;
+  }
+
+  .hero__media {
+    position: absolute;
+    inset: -6% 0 0 0;
+  }
+
+  .hero__media :global(img) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero__media {
+      animation: hero-in 9s cubic-bezier(0.25, 0.6, 0.3, 1) both;
+    }
+  }
+
+  @keyframes hero-in {
+    0% {
+      transform: scale(1.14);
+      opacity: 0;
+    }
+    35% {
+      transform: scale(1.04);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .hero__shade {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(90deg, rgba(15, 14, 13, 0.78) 0%, rgba(15, 14, 13, 0.35) 55%, rgba(15, 14, 13, 0) 80%),
+      linear-gradient(180deg, rgba(15, 14, 13, 0.55) 0%, rgba(15, 14, 13, 0.45) 40%, rgba(15, 14, 13, 0.94) 100%);
+  }
+
+  .hero__content {
+    position: relative;
+    pointer-events: none;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .hero__eyebrow {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+
+  .hero__title {
+    margin: 0;
+    font-weight: 500;
+    font-size: clamp(40px, 6.4vw, 88px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    max-width: 900px;
+  }
+
+  .hero__sub {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--stone-2);
+    max-width: 560px;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    pointer-events: auto;
+  }
+
+  /* ---------- What we cover ---------- */
+
+  .cover {
+    padding-top: 110px;
+    padding-bottom: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .cover__head {
+    max-width: 620px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card__media {
+    aspect-ratio: 4 / 5;
+  }
+
+  .card__text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card__title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .card__blurb {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  /* ---------- Recent events ---------- */
+
+  .work {
+    padding-top: 110px;
+    padding-bottom: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .work__title {
+    color: var(--cream);
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .work-tile--1 {
+    grid-column: span 7;
+    aspect-ratio: 16 / 10;
+  }
+
+  .work-tile--2 {
+    grid-column: span 5;
+    min-height: 240px;
+  }
+
+  .work-tile--3 {
+    grid-column: span 4;
+    aspect-ratio: 1;
+  }
+
+  .work-tile--4 {
+    grid-column: span 8;
+    min-height: 240px;
+  }
+
+  @media (max-width: 639.98px) {
+    .work-tile {
+      grid-column: 1 / -1;
+      aspect-ratio: 3 / 2;
+      min-height: 0;
+    }
+  }
+
+  /* ---------- Instagram ---------- */
+
+  .insta {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .insta__head {
+    gap: 24px;
+  }
+
+  .insta__head-text {
+    gap: 14px;
+  }
+
+  .insta__title {
+    margin: 0;
+    font-weight: 500;
+    font-size: clamp(28px, 3vw, 40px);
+    letter-spacing: -0.02em;
+  }
+
+  .insta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(160px, calc(50% - 5px)), 1fr));
+    gap: 10px;
+  }
+
+  .insta-tile {
+    aspect-ratio: 1;
+  }
+</style>

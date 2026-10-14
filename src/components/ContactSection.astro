@@ -1,0 +1,111 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  /** The intro heading is the page's h1 on /contact; on /thanks the card message is. */
+  introHeading?: 'h1' | 'p';
+}
+
+const { introHeading: Heading = 'h1' } = Astro.props;
+---
+
+<section class="section-dark contact">
+  <div class="container contact__grid" data-stagger>
+    <div class="contact__intro">
+      <p class="eyebrow">Book an event</p>
+      <Heading class="contact__title">Tell us about your event.</Heading>
+      <p class="contact__text">
+        Share the date, venue and what you need. We'll reply within one business day with availability and a quote.
+      </p>
+      <div class="contact__rows">
+        <a class="contact__row" href={`mailto:${site.email}`}>
+          <span class="contact__label">EMAIL</span>
+          {site.email}
+        </a>
+        <a class="contact__row" href={site.instagram.url} target="_blank" rel="noopener">
+          <span class="contact__label">INSTAGRAM</span>
+          {site.instagram.handle}
+        </a>
+      </div>
+    </div>
+    <div class="contact__card">
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    min-height: 80vh;
+  }
+
+  .contact__grid {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+    gap: 64px;
+  }
+
+  .contact__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .contact__title {
+    margin: 0;
+    font-weight: 500;
+    font-size: clamp(36px, 4.4vw, 58px);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+  }
+
+  .contact__text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--stone);
+    max-width: 440px;
+  }
+
+  .contact__rows {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--rule-dark-2);
+    margin-top: 12px;
+  }
+
+  .contact__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule-dark-2);
+    color: var(--cream);
+    font-size: 15px;
+    overflow-wrap: anywhere;
+    transition: color 0.3s;
+  }
+
+  .contact__row:hover {
+    color: var(--gold);
+  }
+
+  .contact__label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+  }
+
+  .contact__card {
+    background: var(--cream);
+    padding: clamp(24px, 5vw, 40px);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+</style>

@@ -1,0 +1,97 @@
+---
+import Logo from './Logo.astro';
+import { nav, site } from '../data/site';
+---
+
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <div class="footer__top">
+      <Logo variant="footer" />
+      <div class="footer__cols">
+        <nav class="footer__col" aria-label="Footer">
+          <p class="footer__label">PAGES</p>
+          {nav.map((item) => <a class="footer__nav-link" href={item.href}>{item.label}</a>)}
+        </nav>
+        <div class="footer__col">
+          <p class="footer__label">CONTACT</p>
+          <a class="footer__link" href={`mailto:${site.email}`}>{site.email}</a>
+          <a class="footer__link" href={site.instagram.url} target="_blank" rel="noopener">{site.instagram.handle}</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Cinematic Winnipeg</p>
+      <p>{site.domain} · Winnipeg, Manitoba</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--ink-black);
+    border-top: 1px solid var(--rule-dark);
+  }
+
+  .footer__inner {
+    padding-top: 64px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .footer__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .footer__cols {
+    display: flex;
+    gap: 56px;
+    flex-wrap: wrap;
+  }
+
+  .footer__col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer__label {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+  }
+
+  .footer__nav-link,
+  .footer__link {
+    font-size: 14px;
+    color: var(--stone-2);
+    transition: color 0.3s;
+  }
+
+  .footer__nav-link:hover,
+  .footer__link:hover {
+    color: var(--gold);
+  }
+
+  .footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule-dark);
+    font-size: 12px;
+    color: var(--muted-2);
+    letter-spacing: 0.06em;
+  }
+
+  .footer__bottom p {
+    margin: 0;
+  }
+</style>

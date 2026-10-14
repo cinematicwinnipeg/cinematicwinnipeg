@@ -1,0 +1,100 @@
+---
+import '@fontsource-variable/plus-jakarta-sans';
+import '../styles/global.css';
+import fontLatin from '@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2?url';
+import Header from '../components/Header.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Keep the page out of search results (used for /thanks and 404). */
+  noindex?: boolean;
+}
+
+const { title, description, noindex = false } = Astro.props;
+
+// "/services.html" → "/services", "/index.html" → "/"
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/') || '/';
+const canonical = new URL(path, site.url).href;
+const ogImage = new URL('/og-image.jpg', site.url).href;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${site.url}/#business`,
+  name: site.name,
+  description:
+    'Event photography, film and licensed drone coverage for galas, corporate events, golf tournaments, fundraisers, festivals and carnivals in Winnipeg and across Manitoba.',
+  url: site.url,
+  email: site.email,
+  image: ogImage,
+  logo: new URL('/icon-512.png', site.url).href,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Winnipeg',
+    addressRegion: 'MB',
+    addressCountry: 'CA',
+  },
+  areaServed: { '@type': 'AdministrativeArea', name: 'Manitoba' },
+  sameAs: [site.instagram.url],
+};
+---
+
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+    <meta name="theme-color" content="#0f0e0d" />
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preload" href={fontLatin} as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_CA" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Cinematic Winnipeg — event photography, film and drone in Winnipeg, Manitoba" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('motion');
+        // Failsafe: never leave content hidden if the main script fails to run.
+        setTimeout(function () {
+          if (!window.__cw) document.documentElement.classList.remove('motion');
+        }, 4000);
+      }
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header current={path} />
+    <main id="main">
+      <slot />
+    </main>
+    <CtaBand />
+    <Footer />
+    <script>
+      import '../scripts/main.ts';
+    </script>
+  </body>
+</html>

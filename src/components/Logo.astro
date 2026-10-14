@@ -1,0 +1,73 @@
+---
+import Iris from './Iris.astro';
+
+interface Props {
+  variant?: 'header' | 'footer';
+  href?: string;
+}
+
+const { variant = 'header', href } = Astro.props;
+const Tag = href ? 'a' : 'div';
+---
+
+<Tag
+  href={href}
+  class:list={['lockup', `lockup--${variant}`]}
+  data-lockup
+  aria-label={href ? 'Cinematic Winnipeg — home' : undefined}
+>
+  {variant === 'header' ? <Iris size={32} bar={2.4} /> : <Iris size={40} bar={2.5} />}
+  <span class="wordmark">
+    <span class="wordmark__name">CINEMATIC</span>
+    <span class="wordmark__city">WINNIPEG</span>
+  </span>
+</Tag>
+
+<style>
+  .lockup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .wordmark {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .wordmark__name {
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.14em;
+    color: var(--cream);
+    line-height: 1;
+  }
+
+  /* 0.4× CINEMATIC, nudged so the W lines up with the C */
+  .wordmark__city {
+    font-weight: 500;
+    font-size: 7.2px;
+    letter-spacing: 0.62em;
+    color: var(--gold);
+    line-height: 1;
+    padding-left: 1px;
+  }
+
+  .lockup--footer {
+    gap: 14px;
+  }
+
+  .lockup--footer .wordmark {
+    gap: 7px;
+  }
+
+  .lockup--footer .wordmark__name {
+    font-size: 22px;
+  }
+
+  .lockup--footer .wordmark__city {
+    font-size: 8px;
+    padding-left: 1.1px;
+  }
+</style>

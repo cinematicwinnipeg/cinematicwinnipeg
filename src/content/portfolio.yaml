@@ -1,0 +1,161 @@
+# Portfolio — the photos on /portfolio, in the order they appear under "All".
+#
+# To edit:
+#   - title:    the event name shown under the photo (placeholders for now — swap in real event names).
+#   - category: one of Galas, Corporate, Golf, Festivals, Aerial (this drives the filter chips).
+#   - image:    a photo in src/assets/photos/ (path is relative to this file).
+#   - alt:      a short description of the photo for screen readers and search engines.
+#   - id:       any unique slug.
+#
+# To add a photo: drop the JPEG into src/assets/photos/ and add an entry below.
+# Photos are resized and converted to AVIF/WebP automatically at build time.
+
+- id: gala-stage-performance
+  title: Gala performance
+  category: Galas
+  image: ../assets/photos/gala-stage-performance.jpg
+  alt: A singer performing on stage at a gala, seen past the audience
+
+- id: corporate-reception-atrium
+  title: Corporate reception
+  category: Corporate
+  image: ../assets/photos/corporate-reception-atrium.jpg
+  alt: A crowded corporate reception in a wood-panelled atrium, seen from above
+
+- id: carnival-inflatable-slide
+  title: Carnival 2026
+  category: Festivals
+  image: ../assets/photos/carnival-inflatable-slide.jpg
+  alt: Kids sliding down a giant inflatable slide at a carnival
+
+- id: fundraising-gala-speaker
+  title: Fundraising gala
+  category: Galas
+  image: ../assets/photos/fundraising-gala-speaker.jpg
+  alt: A speaker at the podium during a fundraising gala
+
+- id: golf-tournament-team
+  title: Golf tournament
+  category: Golf
+  image: ../assets/photos/golf-tournament-team.jpg
+  alt: A golf tournament team posing together on the course
+
+- id: carnival-aerial-crowd
+  title: Carnival 2026 — Aerial
+  category: Aerial
+  image: ../assets/photos/carnival-aerial-crowd.jpg
+  alt: Aerial drone view of a carnival crowd on a sports field
+
+- id: anniversary-150-celebration
+  title: Anniversary celebration
+  category: Corporate
+  image: ../assets/photos/anniversary-150-celebration.jpg
+  alt: Guests mingling beside an illuminated 150th anniversary sign
+
+- id: cultural-gala-dancers
+  title: Cultural gala
+  category: Galas
+  image: ../assets/photos/cultural-gala-dancers.jpg
+  alt: Dancers in colourful traditional dress performing at a cultural gala
+
+- id: carnival-kids-treats
+  title: Carnival 2026
+  category: Festivals
+  image: ../assets/photos/carnival-kids-treats.jpg
+  alt: Kids holding treats under a tent at a carnival
+
+- id: grand-opening-speech
+  title: Grand opening
+  category: Corporate
+  image: ../assets/photos/grand-opening-speech.jpg
+  alt: A speaker addressing guests from a podium at a grand opening
+
+- id: charity-gala-dinner
+  title: Charity gala dinner
+  category: Galas
+  image: ../assets/photos/charity-gala-dinner.jpg
+  alt: Guests seated at round tables in a decorated gala dinner hall
+
+- id: golf-tournament-green
+  title: Golf tournament
+  category: Golf
+  image: ../assets/photos/golf-tournament-green.jpg
+  alt: Golfers walking onto the green during a tournament
+
+- id: carnival-face-painting
+  title: Carnival 2026
+  category: Festivals
+  image: ../assets/photos/carnival-face-painting.jpg
+  alt: A girl getting her face painted at a carnival
+
+- id: grand-opening-ribbon-cutting
+  title: Ribbon cutting
+  category: Corporate
+  image: ../assets/photos/grand-opening-ribbon-cutting.jpg
+  alt: A team gathered for a ribbon cutting outside a new building
+
+- id: fundraiser-guests
+  title: Fundraiser
+  category: Galas
+  image: ../assets/photos/fundraiser-guests.jpg
+  alt: Two guests posing together at a fundraiser
+
+- id: carnival-aerial-neighbourhood
+  title: Carnival 2026 — Aerial
+  category: Aerial
+  image: ../assets/photos/carnival-aerial-neighbourhood.jpg
+  alt: Wide aerial view of a carnival site and the surrounding neighbourhood
+
+- id: carnival-mascot-photo
+  title: Carnival 2026
+  category: Festivals
+  image: ../assets/photos/carnival-mascot-photo.jpg
+  alt: A boy posing with a costumed mascot at a carnival
+
+- id: gala-dinner-guests
+  title: Gala dinner
+  category: Galas
+  image: ../assets/photos/gala-dinner-guests.jpg
+  alt: Guests at a gala dinner watching the stage
+
+- id: sponsor-product-display
+  title: Sponsor product
+  category: Corporate
+  image: ../assets/photos/sponsor-product-display.jpg
+  alt: Four sponsor drink cans lined up on a table outdoors
+
+- id: carnival-mascot-field
+  title: Carnival 2026
+  category: Festivals
+  image: ../assets/photos/carnival-mascot-field.jpg
+  alt: A costumed mascot greeting kids on a carnival field
+
+- id: carnival-mascot-volunteer
+  title: Carnival 2026
+  category: Festivals
+  image: ../assets/photos/carnival-mascot-volunteer.jpg
+  alt: A volunteer posing with a costumed mascot at a carnival
+
+- id: carnival-volunteers
+  title: Carnival 2026
+  category: Festivals
+  image: ../assets/photos/carnival-volunteers.jpg
+  alt: Three volunteers in matching green shirts at a carnival
+
+- id: carnival-food-tent
+  title: Carnival 2026
+  category: Festivals
+  image: ../assets/photos/carnival-food-tent.jpg
+  alt: Volunteers serving food to guests under a carnival tent
+
+- id: carnival-guests-snacking
+  title: Carnival 2026
+  category: Festivals
+  image: ../assets/photos/carnival-guests-snacking.jpg
+  alt: Guests sharing snacks at a table at a carnival
+
+- id: carnival-emergency-vehicles
+  title: Carnival 2026
+  category: Festivals
+  image: ../assets/photos/carnival-emergency-vehicles.jpg
+  alt: An ambulance and police car on display at a carnival

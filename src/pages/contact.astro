@@ -1,0 +1,225 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactSection from '../components/ContactSection.astro';
+
+const eventTypes = ['Gala', 'Corporate event', 'Festival / carnival', 'Wedding', 'Drone / aerial only', 'Other'];
+const coverage = ['Photography', 'Video', 'Drone'];
+---
+
+<Base
+  title="Book an Event — Contact | Cinematic Winnipeg"
+  description="Tell us about your event. Share the date, venue and what you need and we'll reply within one business day with availability and a quote."
+>
+  <ContactSection>
+    <!-- Netlify Forms: detected at deploy time; submissions show up under Forms → "enquiry". -->
+    <form
+      class="form"
+      name="enquiry"
+      method="POST"
+      action="/thanks"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="form-name" value="enquiry" />
+      <p class="visually-hidden" aria-hidden="true">
+        <label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+      </p>
+
+      <div class="form__grid">
+        <label class="field">
+          Name
+          <input class="field__input" name="name" required autocomplete="name" />
+        </label>
+        <label class="field">
+          Email
+          <input class="field__input" type="email" name="email" required autocomplete="email" />
+        </label>
+        <label class="field">
+          Phone
+          <input class="field__input" type="tel" name="phone" autocomplete="tel" />
+        </label>
+        <label class="field">
+          Event type
+          <select class="field__input field__select" name="event-type">
+            {eventTypes.map((type) => <option>{type}</option>)}
+          </select>
+        </label>
+        <label class="field">
+          Event date
+          <input class="field__input field__date" type="date" name="event-date" />
+        </label>
+        <label class="field">
+          Venue
+          <input class="field__input" name="venue" />
+        </label>
+      </div>
+
+      <fieldset class="coverage">
+        <legend class="coverage__legend">Coverage needed</legend>
+        <div class="coverage__chips">
+          {
+            coverage.map((option) => (
+              <label class="chip">
+                <input type="checkbox" name="coverage[]" value={option} checked={option === 'Photography'} />
+                <span>{option}</span>
+              </label>
+            ))
+          }
+        </div>
+      </fieldset>
+
+      <label class="field">
+        Details
+        <textarea class="field__input field__textarea" name="details" rows="5"></textarea>
+      </label>
+
+      <button class="submit" type="submit">Send enquiry</button>
+    </form>
+  </ContactSection>
+</Base>
+
+<style>
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+  }
+
+  .field,
+  .coverage__legend {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .field__input {
+    width: 100%;
+    font-size: 15px;
+    padding: 14px;
+    border: 1px solid var(--rule-light-2);
+    border-radius: 0;
+    background: #fff;
+    color: var(--ink);
+    letter-spacing: 0;
+    text-transform: none;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .field__input:focus {
+    border-color: var(--gold-deep);
+  }
+
+  .field__input:focus-visible {
+    box-shadow: inset 0 0 0 1px var(--gold-deep);
+  }
+
+  .field__date {
+    padding: 13px 14px;
+    min-height: 50px;
+  }
+
+  .field__select {
+    -webkit-appearance: none;
+    appearance: none;
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2355504a' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    cursor: pointer;
+  }
+
+  .field__textarea {
+    resize: vertical;
+  }
+
+  .coverage {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+  }
+
+  .coverage__legend {
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .coverage__chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .chip {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .chip input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+  }
+
+  .chip span {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 40px;
+    border: 1px solid var(--rule-light-2);
+    background: #fff;
+    color: var(--ink);
+    transition:
+      background 0.2s,
+      color 0.2s,
+      border-color 0.2s;
+  }
+
+  .chip input:checked + span {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+  }
+
+  .chip input:focus-visible + span {
+    outline: 2px solid var(--gold-deep);
+    outline-offset: 2px;
+  }
+
+  .submit {
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: var(--ink);
+    border: none;
+    padding: 18px;
+    border-radius: 2px;
+    margin-top: 6px;
+    transition: background 0.3s;
+  }
+
+  .submit:hover {
+    background: #000;
+  }
+</style>

@@ -1,0 +1,13 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# local env / tooling
+.env
+.env.*
+.netlify/
+.DS_Store
+npm-debug.log*

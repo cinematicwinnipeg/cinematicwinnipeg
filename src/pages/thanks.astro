@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactSection from '../components/ContactSection.astro';
+---
+
+<Base
+  title="Thank You — Enquiry Received | Cinematic Winnipeg"
+  description="Thanks for your enquiry. Cinematic Winnipeg will reply within one business day with availability and a quote."
+  noindex
+>
+  <ContactSection introHeading="p">
+    <div class="sent">
+      <p class="eyebrow eyebrow--deep">Received</p>
+      <h1 class="sent__title">Thank you — we'll be in touch within one business day.</h1>
+      <a class="sent__again" href="/contact">Send another</a>
+    </div>
+  </ContactSection>
+</Base>
+
+<style>
+  .sent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 40px 0;
+  }
+
+  .sent__title {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .sent__again {
+    align-self: flex-start;
+    margin-top: 10px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--gold-deep);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    transition: color 0.3s;
+  }
+
+  .sent__again:hover {
+    color: var(--gold-deep);
+  }
+</style>

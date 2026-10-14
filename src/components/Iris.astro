@@ -1,0 +1,66 @@
+---
+/**
+ * The iris/aperture mark: six bars rotated in 60° steps around the centre.
+ * Geometry is taken from the brand sheet (header 32px, footer 40px).
+ */
+interface Props {
+  size?: number;
+  /** Bar thickness in px — optically tuned per size, so it isn't strictly proportional. */
+  bar?: number;
+}
+
+const { size = 32, bar = size * 0.075 } = Astro.props;
+const c = size / 2;
+const h = +(size * 0.4547).toFixed(3);
+const tx = +(size * 0.2625).toFixed(3);
+const ty = +(size * -0.0757).toFixed(3);
+---
+
+<span class="iris" data-iris aria-hidden="true" style={`--size:${size}px`}>
+  <svg viewBox={`0 0 ${size} ${size}`} width={size} height={size} focusable="false">
+    {
+      [0, 60, 120, 180, 240, 300].map((deg) => (
+        <rect
+          x={-bar / 2}
+          y={-h / 2}
+          width={bar}
+          height={h}
+          transform={`translate(${c} ${c}) rotate(${deg}) translate(${tx} ${ty})`}
+        />
+      ))
+    }
+  </svg>
+</span>
+
+<style>
+  .iris {
+    display: block;
+    flex-shrink: 0;
+    width: var(--size);
+    height: var(--size);
+    color: var(--gold);
+  }
+
+  svg {
+    fill: currentColor;
+    overflow: visible;
+    transform-origin: 50% 50%;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .iris {
+      animation: iris-in 1.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+  }
+
+  @keyframes iris-in {
+    from {
+      transform: rotate(-180deg) scale(0.3);
+      opacity: 0;
+    }
+    to {
+      transform: none;
+      opacity: 1;
+    }
+  }
+</style>
