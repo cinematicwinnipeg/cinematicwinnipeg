@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cinematic Winnipeg — Event Photography, Film &amp; Drone | Winnipeg, MB</title>
+<meta name="description" content="Cinematic Winnipeg — photography, film and drone coverage for galas, corporate events, golf tournaments, festivals and carnivals in Winnipeg, Manitoba.">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>body{margin:0;background:#0f0e0d;font-family:'Plus Jakarta Sans',sans-serif;color:#1e1c19;-webkit-font-smoothing:antialiased}a{color:#c9a458;text-decoration:none}a:hover{color:#fbf8f2}*{box-sizing:border-box}input,select,textarea,button{font-family:inherit}</style>
+</helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column">
+
+  <header style="position:sticky;top:0;z-index:20;background:rgba(15,14,13,.92);backdrop-filter:blur(10px);border-bottom:1px solid #26231f">
+    <div style="max-width:1240px;margin:0 auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <div onClick="{{ goHome }}" style="display:flex;align-items:center;gap:12px;cursor:pointer">
+        <div data-iris="" style="position:relative;width:32px;height:32px;flex-shrink:0">
+          <div style="position:absolute;left:50%;top:50%;width:2.4px;height:14.55px;margin-left:-1.2px;margin-top:-7.27px;background:#c9a458;transform:rotate(0deg) translateX(8.4px) translateY(-2.42px)"></div>
+          <div style="position:absolute;left:50%;top:50%;width:2.4px;height:14.55px;margin-left:-1.2px;margin-top:-7.27px;background:#c9a458;transform:rotate(60deg) translateX(8.4px) translateY(-2.42px)"></div>
+          <div style="position:absolute;left:50%;top:50%;width:2.4px;height:14.55px;margin-left:-1.2px;margin-top:-7.27px;background:#c9a458;transform:rotate(120deg) translateX(8.4px) translateY(-2.42px)"></div>
+          <div style="position:absolute;left:50%;top:50%;width:2.4px;height:14.55px;margin-left:-1.2px;margin-top:-7.27px;background:#c9a458;transform:rotate(180deg) translateX(8.4px) translateY(-2.42px)"></div>
+          <div style="position:absolute;left:50%;top:50%;width:2.4px;height:14.55px;margin-left:-1.2px;margin-top:-7.27px;background:#c9a458;transform:rotate(240deg) translateX(8.4px) translateY(-2.42px)"></div>
+          <div style="position:absolute;left:50%;top:50%;width:2.4px;height:14.55px;margin-left:-1.2px;margin-top:-7.27px;background:#c9a458;transform:rotate(300deg) translateX(8.4px) translateY(-2.42px)"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="font-weight:600;font-size:18px;letter-spacing:.14em;color:#fbf8f2;line-height:1">CINEMATIC</div>
+          <div style="font-weight:500;font-size:7.2px;letter-spacing:.62em;color:#c9a458;line-height:1;padding-left:1px">WINNIPEG</div>
+        </div>
+      </div>
+      <nav style="display:flex;align-items:center;gap:30px;flex-wrap:wrap">
+        <sc-for list="{{ nav }}" as="n" hint-placeholder-count="3">
+          <div onClick="{{ n.go }}" style="cursor:pointer;font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:{{ n.color }};padding:6px 0;border-bottom:1px solid {{ n.line }}" style-hover="color:#fbf8f2">{{ n.label }}</div>
+        </sc-for>
+        <div onClick="{{ goContact }}" style="cursor:pointer;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#0f0e0d;background:#c9a458;padding:12px 20px;border-radius:2px;transition:background .3s,transform .3s,box-shadow .3s,border-color .3s" style-hover="background:#e0c07a;transform:translateY(-2px);box-shadow:0 10px 30px -10px rgba(201,164,88,.6)">Book an event</div>
+      </nav>
+    </div>
+  <div data-progress="" style="position:absolute;left:0;bottom:-1px;height:1px;width:100%;background:#c9a458;transform-origin:0 50%;transform:scaleX(0);pointer-events:none"></div>
+  </header>
+
+  <main style="flex:1">
+
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+      <section data-screen-label="Home" style="position:relative;min-height:88vh;display:flex;align-items:flex-end;background:#0f0e0d;overflow:hidden">
+        <div data-hero-img="" style="position:absolute;inset:-6% 0 0 0"><image-slot id="home-hero" src="img/photos-1791944825514-clnf.jpg" shape="rect" placeholder="Drop a hero image — gala, festival or aerial"></image-slot></div>
+        <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(15,14,13,.78) 0%,rgba(15,14,13,.35) 55%,rgba(15,14,13,0) 80%),linear-gradient(180deg,rgba(15,14,13,.55) 0%,rgba(15,14,13,.45) 40%,rgba(15,14,13,.94) 100%)"></div>
+        <div data-stagger="" style="position:relative;pointer-events:none;width:100%;max-width:1240px;margin:0 auto;padding:0 28px 80px;display:flex;flex-direction:column;gap:28px">
+          <div style="font-size:12px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:#e0c07a">Photography · Film · Aerial — Winnipeg, Manitoba</div>
+          <h1 style="margin:0;font-weight:500;font-size:clamp(40px,6.4vw,88px);line-height:1.02;letter-spacing:-.02em;color:#fbf8f2;max-width:900px;text-wrap:pretty">Large events, captured like a film.</h1>
+          <p style="margin:0;font-size:18px;line-height:1.6;color:#d8d2c6;max-width:560px;text-wrap:pretty">Galas, corporate events, festivals and carnivals — covered from the ground and the sky, delivered fast.</p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;pointer-events:auto">
+            <div onClick="{{ goContact }}" style="cursor:pointer;font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#0f0e0d;background:#c9a458;padding:18px 28px;border-radius:2px;white-space:nowrap;transition:background .3s,transform .3s,box-shadow .3s,border-color .3s" style-hover="background:#e0c07a;transform:translateY(-2px);box-shadow:0 10px 30px -10px rgba(201,164,88,.6)">Book your event</div>
+            <div onClick="{{ goPortfolio }}" style="cursor:pointer;font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#fbf8f2;border:1px solid rgba(251,248,242,.4);padding:17px 28px;border-radius:2px;white-space:nowrap;transition:background .3s,transform .3s,box-shadow .3s,border-color .3s" style-hover="border-color:#fbf8f2">View work</div>
+          </div>
+        </div>
+      </section>
+
+      <section style="background:#fbf8f2">
+        <div style="max-width:1240px;margin:0 auto;padding:110px 28px;display:flex;flex-direction:column;gap:56px">
+          <div data-reveal="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+            <div style="display:flex;flex-direction:column;gap:16px;max-width:620px">
+              <div style="font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#a8853c">What we cover</div>
+              <h2 style="margin:0;font-weight:500;font-size:clamp(30px,3.6vw,46px);line-height:1.12;letter-spacing:-.02em;text-wrap:pretty">Built for events with hundreds of guests and one chance to get it right.</h2>
+            </div>
+            <div onClick="{{ goServices }}" style="cursor:pointer;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#1e1c19;border-bottom:1px solid #a8853c;padding-bottom:6px">All services →</div>
+          </div>
+          <div data-stagger="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px">
+            <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
+              <div onClick="{{ goServices }}" style="cursor:pointer;display:flex;flex-direction:column;gap:20px">
+                <div data-zoom="" style="overflow:hidden;position:relative;aspect-ratio:4/5;background:#ece6da"><image-slot id="home-svc-{{ s.id }}" src="{{ s.src }}" shape="rect" placeholder="{{ s.title }}"></image-slot></div>
+                <div style="display:flex;flex-direction:column;gap:8px">
+                  <div style="font-size:12px;font-weight:600;letter-spacing:.24em;color:#a8853c">{{ s.num }}</div>
+                  <div style="font-size:22px;font-weight:600;letter-spacing:-.01em">{{ s.title }}</div>
+                  <div style="font-size:15px;line-height:1.6;color:#55504a">{{ s.blurb }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <section style="background:#0f0e0d">
+        <div style="max-width:1240px;margin:0 auto;padding:110px 28px;display:flex;flex-direction:column;gap:48px">
+          <div data-reveal="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#c9a458">Selected work</div>
+              <h2 style="margin:0;font-weight:500;font-size:clamp(30px,3.6vw,46px);line-height:1.12;letter-spacing:-.02em;color:#fbf8f2">Recent events</h2>
+            </div>
+            <div onClick="{{ goPortfolio }}" style="cursor:pointer;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#fbf8f2;border-bottom:1px solid #c9a458;padding-bottom:6px">Full portfolio →</div>
+          </div>
+          <div data-stagger="" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px">
+            <div data-zoom="" style="overflow:hidden;grid-column:span 7;position:relative;aspect-ratio:16/10;background:#1b1916"><image-slot id="home-work-1" src="img/photos-1791944834076-ttbl.jpg" shape="rect" placeholder="Feature event"></image-slot></div>
+            <div data-zoom="" style="overflow:hidden;grid-column:span 5;position:relative;aspect-ratio:auto;min-height:240px;background:#1b1916"><image-slot id="home-work-2" src="img/photos-1791944825531-n9af.jpg" shape="rect" placeholder="Event photo"></image-slot></div>
+            <div data-zoom="" style="overflow:hidden;grid-column:span 4;position:relative;aspect-ratio:1;background:#1b1916"><image-slot id="home-work-3" src="img/photos-1791944825481-8bpx.jpg" shape="rect" placeholder="Event photo"></image-slot></div>
+            <div data-zoom="" style="overflow:hidden;grid-column:span 8;position:relative;aspect-ratio:auto;min-height:240px;background:#1b1916"><image-slot id="home-work-4" src="img/photos-1791944067454-9495.jpg" shape="rect" placeholder="Aerial / wide shot"></image-slot></div>
+          </div>
+        </div>
+      </section>
+
+      <sc-if value="{{ showInstagram }}" hint-placeholder-val="{{ true }}">
+        <section style="background:#fbf8f2">
+          <div style="max-width:1240px;margin:0 auto;padding:100px 28px;display:flex;flex-direction:column;gap:40px">
+            <div data-reveal="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+              <div style="display:flex;flex-direction:column;gap:14px">
+                <div style="font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#a8853c">On Instagram</div>
+                <h2 style="margin:0;font-weight:500;font-size:clamp(28px,3vw,40px);letter-spacing:-.02em">@cinematicwinnipeg</h2>
+              </div>
+              <a href="https://instagram.com/cinematicwinnipeg" target="_blank" style="font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#1e1c19;border-bottom:1px solid #a8853c;padding-bottom:6px">Follow →</a>
+            </div>
+            <div data-stagger="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px">
+              <sc-for list="{{ insta }}" as="i" hint-placeholder-count="6">
+                <a href="https://instagram.com/cinematicwinnipeg" target="_blank" data-zoom="" style="overflow:hidden;position:relative;aspect-ratio:1;display:block;background:#ece6da"><image-slot id="ig-{{ i.id }}" src="{{ i.src }}" shape="rect" placeholder="Post"></image-slot></a>
+              </sc-for>
+            </div>
+          </div>
+        </section>
+      </sc-if>
+    </sc-if>
+
+    <sc-if value="{{ isServices }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Services" style="background:#0f0e0d">
+        <div style="max-width:1240px;margin:0 auto;padding:110px 28px 90px;display:flex;flex-direction:column;gap:20px" data-stagger="">
+          <div style="font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#c9a458">Services</div>
+          <h1 style="margin:0;font-weight:500;font-size:clamp(38px,5vw,68px);line-height:1.05;letter-spacing:-.02em;color:#fbf8f2;max-width:860px;text-wrap:pretty">Photo, film and drone coverage for events that matter.</h1>
+        </div>
+      </section>
+      <sc-for list="{{ serviceDetail }}" as="s" hint-placeholder-count="3">
+        <section style="background:{{ s.bg }}">
+          <div data-stagger="" style="max-width:1240px;margin:0 auto;padding:100px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:56px;align-items:center">
+            <div data-zoom="" style="overflow:hidden;position:relative;aspect-ratio:4/3;background:{{ s.slotBg }}"><image-slot id="svc-{{ s.id }}" src="{{ s.src }}" shape="rect" placeholder="{{ s.title }}"></image-slot></div>
+            <div style="display:flex;flex-direction:column;gap:22px">
+              <div style="font-size:12px;font-weight:600;letter-spacing:.24em;color:{{ s.gold }}">{{ s.num }}</div>
+              <h2 style="margin:0;font-weight:500;font-size:clamp(28px,3.2vw,42px);line-height:1.1;letter-spacing:-.02em;color:{{ s.ink }}">{{ s.title }}</h2>
+              <p style="margin:0;font-size:16px;line-height:1.7;color:{{ s.sub }};text-wrap:pretty">{{ s.body }}</p>
+              <div style="display:flex;flex-direction:column;border-top:1px solid {{ s.rule }}">
+                <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="4">
+                  <div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid {{ s.rule }};font-size:15px;color:{{ s.ink }}"><div style="width:6px;height:6px;background:{{ s.gold }};transform:rotate(45deg);flex-shrink:0"></div>{{ it }}</div>
+                </sc-for>
+              </div>
+              <div onClick="{{ goContact }}" style="align-self:flex-start;cursor:pointer;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#0f0e0d;background:#c9a458;padding:16px 24px;border-radius:2px;margin-top:6px" style-hover="background:#e0c07a;transform:translateY(-2px);box-shadow:0 10px 30px -10px rgba(201,164,88,.6)">Enquire about {{ s.short }}</div>
+            </div>
+          </div>
+        </section>
+      </sc-for>
+    </sc-if>
+
+    <sc-if value="{{ isPortfolio }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Portfolio" style="background:#fbf8f2;min-height:80vh">
+        <div style="max-width:1240px;margin:0 auto;padding:100px 28px;display:flex;flex-direction:column;gap:40px">
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#a8853c">Portfolio</div>
+            <h1 style="margin:0;font-weight:500;font-size:clamp(38px,5vw,64px);line-height:1.05;letter-spacing:-.02em">The work</h1>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+              <div onClick="{{ f.pick }}" style="cursor:pointer;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:11px 18px;border-radius:40px;border:1px solid {{ f.border }};background:{{ f.bg }};color:{{ f.color }}">{{ f.label }}</div>
+            </sc-for>
+          </div>
+          <div data-stagger="" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px">
+            <sc-for list="{{ work }}" as="w" hint-placeholder-count="6">
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div data-zoom="" style="overflow:hidden;position:relative;aspect-ratio:4/5;background:#ece6da"><image-slot id="pf-{{ w.id }}" src="{{ w.src }}" shape="rect" placeholder="{{ w.cat }}"></image-slot></div>
+                <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+                  <div style="font-size:15px;font-weight:600">{{ w.title }}</div>
+                  <div style="font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#a8853c">{{ w.cat }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="Contact" style="background:#0f0e0d;min-height:80vh">
+        <div data-stagger="" style="max-width:1240px;margin:0 auto;padding:100px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:64px">
+          <div style="display:flex;flex-direction:column;gap:28px">
+            <div style="font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#c9a458">Book an event</div>
+            <h1 style="margin:0;font-weight:500;font-size:clamp(36px,4.4vw,58px);line-height:1.06;letter-spacing:-.02em;color:#fbf8f2;text-wrap:pretty">Tell us about your event.</h1>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#b8b1a5;max-width:440px">Share the date, venue and what you need. We'll reply within one business day with availability and a quote.</p>
+            <div style="display:flex;flex-direction:column;border-top:1px solid #2a2622;margin-top:12px">
+              <a href="mailto:cinematicwinnipeg@gmail.com" style="display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid #2a2622;color:#fbf8f2;font-size:15px"><span style="font-size:11px;font-weight:600;letter-spacing:.2em;color:#8a8175">EMAIL</span>cinematicwinnipeg@gmail.com</a>
+              <a href="https://instagram.com/cinematicwinnipeg" target="_blank" style="display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid #2a2622;color:#fbf8f2;font-size:15px"><span style="font-size:11px;font-weight:600;letter-spacing:.2em;color:#8a8175">INSTAGRAM</span>@cinematicwinnipeg</a>
+            </div>
+          </div>
+          <div style="background:#fbf8f2;padding:40px;display:flex;flex-direction:column;gap:18px">
+            <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column;gap:16px;padding:40px 0">
+                <div style="font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#a8853c">Received</div>
+                <div style="font-size:30px;font-weight:500;letter-spacing:-.02em">Thank you — we'll be in touch within one business day.</div>
+                <div onClick="{{ reset }}" style="cursor:pointer;align-self:flex-start;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;border-bottom:1px solid #a8853c;padding-bottom:4px;margin-top:10px">Send another</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+              <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:18px"><input name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px">
+                  <label style="display:flex;flex-direction:column;gap:8px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#55504a">Name<input required="" name="name" style="font-size:15px;padding:14px;border:1px solid #d9d1c0;background:#fff;color:#1e1c19;letter-spacing:0;text-transform:none;outline:none" style-focus="border-color:#a8853c"></label>
+                  <label style="display:flex;flex-direction:column;gap:8px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#55504a">Email<input required="" type="email" name="email" style="font-size:15px;padding:14px;border:1px solid #d9d1c0;background:#fff;color:#1e1c19;letter-spacing:0;text-transform:none;outline:none" style-focus="border-color:#a8853c"></label>
+                  <label style="display:flex;flex-direction:column;gap:8px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#55504a">Phone<input name="phone" style="font-size:15px;padding:14px;border:1px solid #d9d1c0;background:#fff;color:#1e1c19;letter-spacing:0;text-transform:none;outline:none" style-focus="border-color:#a8853c"></label>
+                  <label style="display:flex;flex-direction:column;gap:8px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#55504a">Event type<select name="event_type" style="font-size:15px;padding:14px;border:1px solid #d9d1c0;background:#fff;color:#1e1c19;letter-spacing:0;text-transform:none;outline:none"><option>Gala</option><option>Corporate event</option><option>Festival / carnival</option><option>Wedding</option><option>Drone / aerial only</option><option>Other</option></select></label>
+                  <label style="display:flex;flex-direction:column;gap:8px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#55504a">Event date<input type="date" name="event_date" style="font-size:15px;padding:13px 14px;border:1px solid #d9d1c0;background:#fff;color:#1e1c19;letter-spacing:0;text-transform:none;outline:none"></label>
+                  <label style="display:flex;flex-direction:column;gap:8px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#55504a">Venue<input name="venue" style="font-size:15px;padding:14px;border:1px solid #d9d1c0;background:#fff;color:#1e1c19;letter-spacing:0;text-transform:none;outline:none" style-focus="border-color:#a8853c"></label>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  <div style="font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#55504a">Coverage needed</div>
+                  <div style="display:flex;gap:8px;flex-wrap:wrap">
+                    <sc-for list="{{ coverage }}" as="c" hint-placeholder-count="3">
+                      <div onClick="{{ c.toggle }}" style="cursor:pointer;font-size:13px;font-weight:500;padding:10px 16px;border-radius:40px;border:1px solid {{ c.border }};background:{{ c.bg }};color:{{ c.color }}">{{ c.label }}</div>
+                    </sc-for>
+                  </div>
+                </div>
+                <label style="display:flex;flex-direction:column;gap:8px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#55504a">Details<textarea name="details" rows="5" style="font-size:15px;padding:14px;border:1px solid #d9d1c0;background:#fff;color:#1e1c19;letter-spacing:0;text-transform:none;outline:none;resize:vertical" style-focus="border-color:#a8853c"></textarea></label>
+                <button type="submit" style="cursor:pointer;font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#fbf8f2;background:#1e1c19;border:none;padding:18px;border-radius:2px;margin-top:6px" style-hover="background:#000">{{ sendLabel }}</button><sc-if value="{{ err }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;line-height:1.5;color:#a33a2a">Something went wrong — please email cinematicwinnipeg@gmail.com directly.</div></sc-if>
+              </form>
+            </sc-if>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+  </main>
+
+  <section style="background:#c9a458">
+    <div style="max-width:1240px;margin:0 auto;padding:56px 28px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+      <div style="font-size:clamp(24px,2.6vw,34px);font-weight:500;letter-spacing:-.02em;color:#0f0e0d">Planning an event in Manitoba?</div>
+      <div onClick="{{ goContact }}" style="cursor:pointer;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#fbf8f2;background:#0f0e0d;padding:16px 26px;border-radius:2px">Check availability</div>
+    </div>
+  </section>
+
+  <footer style="background:#0f0e0d;border-top:1px solid #26231f">
+    <div style="max-width:1240px;margin:0 auto;padding:64px 28px 40px;display:flex;flex-direction:column;gap:48px">
+      <div style="display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div data-iris="" style="position:relative;width:40px;height:40px;flex-shrink:0">
+            <div style="position:absolute;left:50%;top:50%;width:2.5px;height:18.19px;margin-left:-1.25px;margin-top:-9.1px;background:#c9a458;transform:rotate(0deg) translateX(10.5px) translateY(-3.03px)"></div>
+            <div style="position:absolute;left:50%;top:50%;width:2.5px;height:18.19px;margin-left:-1.25px;margin-top:-9.1px;background:#c9a458;transform:rotate(60deg) translateX(10.5px) translateY(-3.03px)"></div>
+            <div style="position:absolute;left:50%;top:50%;width:2.5px;height:18.19px;margin-left:-1.25px;margin-top:-9.1px;background:#c9a458;transform:rotate(120deg) translateX(10.5px) translateY(-3.03px)"></div>
+            <div style="position:absolute;left:50%;top:50%;width:2.5px;height:18.19px;margin-left:-1.25px;margin-top:-9.1px;background:#c9a458;transform:rotate(180deg) translateX(10.5px) translateY(-3.03px)"></div>
+            <div style="position:absolute;left:50%;top:50%;width:2.5px;height:18.19px;margin-left:-1.25px;margin-top:-9.1px;background:#c9a458;transform:rotate(240deg) translateX(10.5px) translateY(-3.03px)"></div>
+            <div style="position:absolute;left:50%;top:50%;width:2.5px;height:18.19px;margin-left:-1.25px;margin-top:-9.1px;background:#c9a458;transform:rotate(300deg) translateX(10.5px) translateY(-3.03px)"></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <div style="font-weight:600;font-size:22px;letter-spacing:.14em;color:#fbf8f2;line-height:1">CINEMATIC</div>
+            <div style="font-weight:500;font-size:8px;letter-spacing:.62em;color:#c9a458;line-height:1;padding-left:1.1px">WINNIPEG</div>
+          </div>
+          <div style="width:1px;height:40px;background:#3a352f;margin:0 12px"></div>
+          <a href="https://northglow.ca" target="_blank" rel="noopener" title="Northglow Creative Group" style="display:flex;align-items:center;text-decoration:none;transition:opacity .3s" style-hover="opacity:.75">
+            <img src="northglow-logo.png" alt="Northglow Creative Group" style="display:block;height:44px;width:auto;opacity:.9">
+          </a>
+        </div>
+        <div style="display:flex;gap:56px;flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="font-size:11px;font-weight:600;letter-spacing:.22em;color:#8a8175">PAGES</div>
+            <sc-for list="{{ nav }}" as="n" hint-placeholder-count="3"><div onClick="{{ n.go }}" style="cursor:pointer;font-size:14px;color:#d8d2c6" style-hover="color:#c9a458">{{ n.label }}</div></sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="font-size:11px;font-weight:600;letter-spacing:.22em;color:#8a8175">CONTACT</div>
+            <a href="mailto:cinematicwinnipeg@gmail.com" style="font-size:14px;color:#d8d2c6">cinematicwinnipeg@gmail.com</a>
+            <a href="https://instagram.com/cinematicwinnipeg" target="_blank" style="font-size:14px;color:#d8d2c6">@cinematicwinnipeg</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;border-top:1px solid #26231f;font-size:12px;color:#6f675b;letter-spacing:.06em">
+        <div>© 2026 Cinematic Winnipeg</div>
+        <div>cinematicwinnipeg.ca · Winnipeg, Manitoba</div>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showInstagram&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;animations&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { page: 'home', filter: 'All', sent: false, cov: { Photography: true } };
+  componentDidMount() {
+    this._seen = new WeakSet();
+    this._reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this._io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { this._io.unobserve(e.target); (e.target._anims || []).forEach(a => a.play()); e.target._shown = true; } }), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    this._onScroll = () => {
+      const y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
+      const p = document.querySelector('[data-progress]'); if (p) p.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, y / h) : 0) + ')';
+      const hero = document.querySelector('[data-hero-img]'); if (hero && !this._reduce) hero.style.translate = '0 ' + (y * 0.25) + 'px';
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this.animate();
+  }
+  componentDidUpdate() { this.animate(); }
+  componentWillUnmount() { this._io && this._io.disconnect(); window.removeEventListener('scroll', this._onScroll); }
+  animate() {
+    if (this._reduce || this.props.animations === false) return;
+    const ease = 'cubic-bezier(.2,.7,.2,1)';
+    const prep = (el, delay) => {
+      if (this._seen.has(el)) return null; this._seen.add(el);
+      const a = el.animate([{ opacity: 0, transform: 'translateY(32px)' }, { opacity: 1, transform: 'none' }], { duration: 1000, delay, easing: ease, fill: 'both' });
+      a.pause(); return a;
+    };
+    document.querySelectorAll('[data-reveal]').forEach(el => { const a = prep(el, 0); if (a) { el._anims = [a]; this._io.observe(el); } });
+    document.querySelectorAll('[data-stagger]').forEach(box => {
+      const kids = [...box.children].filter(k => !this._seen.has(k));
+      if (!kids.length) return;
+      const anims = kids.map((k, i) => prep(k, Math.min(i, 8) * 110)).filter(Boolean);
+      if (box._shown) anims.forEach(a => a.play());
+      else { box._anims = (box._anims || []).concat(anims); if (!this._seen.has(box)) { this._seen.add(box); this._io.observe(box); } }
+    });
+    const hero = document.querySelector('[data-hero-img]');
+    if (hero && !this._seen.has(hero)) { this._seen.add(hero); hero.animate([{ transform: 'scale(1.14)', opacity: 0 }, { transform: 'scale(1.04)', opacity: 1, offset: .35 }, { transform: 'scale(1)', opacity: 1 }], { duration: 9000, easing: 'cubic-bezier(.25,.6,.3,1)', fill: 'both' }); }
+    document.querySelectorAll('[data-iris]').forEach(el => {
+      if (this._seen.has(el)) return; this._seen.add(el);
+      el.animate([{ transform: 'rotate(-180deg) scale(.3)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 1600, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'both' });
+      const host = el.parentElement;
+      host && host.addEventListener('mouseenter', () => el.animate([{ transform: 'rotate(0)' }, { transform: 'rotate(60deg)' }], { duration: 900, easing: 'cubic-bezier(.65,0,.35,1)' }));
+    });
+    document.querySelectorAll('[data-zoom]').forEach(el => {
+      if (this._seen.has(el)) return; this._seen.add(el);
+      const img = () => el.querySelector('image-slot');
+      el.addEventListener('mouseenter', () => { const i = img(); if (i) { i.style.transition = 'transform 1.4s cubic-bezier(.2,.7,.2,1), filter 1.4s'; i.style.transform = 'scale(1.06)'; i.style.filter = 'brightness(1.08)'; } });
+      el.addEventListener('mouseleave', () => { const i = img(); if (i) { i.style.transform = 'none'; i.style.filter = 'none'; } });
+    });
+  }
+  go(page) { this.setState({ page }); window.scrollTo(0, 0); }
+  renderVals() {
+    const { page, filter, sent, cov } = this.state;
+    const pages = [['home', 'Home'], ['services', 'Services'], ['portfolio', 'Portfolio'], ['contact', 'Contact']];
+    const nav = pages.map(([k, label]) => ({ label, go: () => this.go(k), color: page === k ? '#fbf8f2' : '#b8b1a5', line: page === k ? '#c9a458' : 'transparent' }));
+    const services = [
+      { id: 'gala', src: 'img/photos-1791944833071-qyxx.jpg', num: '01', title: 'Galas & Corporate', blurb: 'Galas, fundraisers, golf tournaments, grand openings and company events — candid, stage and sponsor coverage.' },
+      { id: 'fest', src: 'img/photos-1791944062218-x0l4.jpg', num: '02', title: 'Festivals & Carnivals', blurb: 'Multi-day, high-energy events covered end to end, with fast turnaround for social and sponsors.' },
+      { id: 'aerial', src: 'img/photos-1791944067406-8ncg.jpg', num: '03', title: 'Aerial / Drone', blurb: 'Licensed drone photo and video that shows the full scale of your venue and crowd.' }
+    ];
+    const dark = { bg: '#0f0e0d', slotBg: '#1b1916', ink: '#fbf8f2', sub: '#b8b1a5', rule: '#2a2622', gold: '#c9a458' };
+    const light = { bg: '#fbf8f2', slotBg: '#ece6da', ink: '#1e1c19', sub: '#55504a', rule: '#e3dccf', gold: '#a8853c' };
+    const serviceDetail = [
+      { ...light, id: 'gala', src: 'img/photos-1791944825455-8jp1.jpg', num: '01', short: 'galas', title: 'Galas & Corporate Events', body: 'Discreet, polished coverage for galas, fundraisers, golf tournaments, grand openings and corporate functions. We work around your run-of-show so speeches, presentations and guest moments are all captured.', items: ['Event photography — candids, stage, portraits', 'Highlight film and full-length recordings', 'Golf tournaments — teams, holes and sponsors',
+'Step-and-repeat / sponsor wall photos', 'Next-day social preview selects'] },
+      { ...dark, id: 'fest', src: 'img/photos-1791944067423-aw50.jpg', num: '02', short: 'festivals', title: 'Festivals & Carnivals', body: 'Large crowds, multiple stages, long days. We plan coverage across the whole site so organisers, sponsors and vendors all get the content they need.', items: ['Multi-day photo and video coverage', 'Recap reels for social and next-year promo', 'Sponsor and vendor content packs', 'Aerial crowd and site footage'] },
+      { ...light, id: 'aerial', src: 'img/photos-1791944067454-9495.jpg', num: '03', short: 'drone', title: 'Aerial / Drone', body: 'Drone photo and video that shows the scale of your event, venue or property — on its own or added to any event package.', items: ['Aerial photography and 4K video', 'Venue and site overviews', 'Crowd and establishing shots', 'Add-on to any event package'] }
+    ];
+    const cats = ['All', 'Galas', 'Corporate', 'Golf', 'Festivals', 'Aerial'];
+    const filters = cats.map(c => ({ label: c, pick: () => this.setState({ filter: c }), bg: filter === c ? '#1e1c19' : 'transparent', color: filter === c ? '#fbf8f2' : '#1e1c19', border: filter === c ? '#1e1c19' : '#d9d1c0' }));
+    const allWork = [{"id":"g7","title":"Gala performance","cat":"Galas","src":"img/photos-1791944825514-clnf.jpg"},{"id":"g2","title":"Fundraising gala","cat":"Galas","src":"img/photos-1791944825455-8jp1.jpg"},{"id":"g1","title":"Charity gala dinner","cat":"Galas","src":"img/photos-1791944833071-qyxx.jpg"},{"id":"g5","title":"Cultural gala","cat":"Galas","src":"img/photos-1791944825481-8bpx.jpg"},{"id":"g9","title":"Fundraiser","cat":"Galas","src":"img/photos-1791944825559-esun.jpg"},{"id":"g10","title":"Gala dinner","cat":"Galas","src":"img/photos-1791944833063-1w86.jpg"},{"id":"k11","title":"Corporate reception","cat":"Corporate","src":"img/photos-1791944834076-ttbl.jpg"},{"id":"k4","title":"Anniversary celebration","cat":"Corporate","src":"img/photos-1791944825531-n9af.jpg"},{"id":"k8","title":"Grand opening","cat":"Corporate","src":"img/photos-1791944832036-6tv3.jpg"},{"id":"k12","title":"Ribbon cutting","cat":"Corporate","src":"img/photos-1791944833067-fwcu.jpg"},{"id":"k3","title":"Sponsor product","cat":"Corporate","src":"img/photos-1791944825440-lc2w.jpg"},{"id":"f6","title":"Golf tournament","cat":"Golf","src":"img/photos-1791944832031-tvxd.jpg"},{"id":"f13","title":"Golf tournament","cat":"Golf","src":"img/photos-1791944825573-o2p2.jpg"},{"id":"c10","title":"Carnival 2026","cat":"Festivals","src":"img/photos-1791944067423-aw50.jpg"},{"id":"c4","title":"Carnival 2026","cat":"Festivals","src":"img/photos-1791944067434-kdds.jpg"},{"id":"c3","title":"Carnival 2026","cat":"Festivals","src":"img/photos-1791944062199-gmql.jpg"},{"id":"c5","title":"Carnival 2026","cat":"Festivals","src":"img/photos-1791944062218-x0l4.jpg"},{"id":"c2","title":"Carnival 2026","cat":"Festivals","src":"img/photos-1791944062194-1tor.jpg"},{"id":"c9","title":"Carnival 2026","cat":"Festivals","src":"img/photos-1791944062253-n3hu.jpg"},{"id":"c11","title":"Carnival 2026","cat":"Festivals","src":"img/photos-1791944067433-vrb7.jpg"},{"id":"c1","title":"Carnival 2026","cat":"Festivals","src":"img/photos-1791944062183-ufnn.jpg"},{"id":"c6","title":"Carnival 2026","cat":"Festivals","src":"img/photos-1791944062226-szrs.jpg"},{"id":"c7","title":"Carnival 2026","cat":"Festivals","src":"img/photos-1791944076053-1hez.jpg"},{"id":"a8","title":"Carnival 2026 — Aerial","cat":"Aerial","src":"img/photos-1791944067406-8ncg.jpg"},{"id":"a12","title":"Carnival 2026 — Aerial","cat":"Aerial","src":"img/photos-1791944067454-9495.jpg"}];
+    const order = ["g7","k11","c10","g2","f13","a8","k4","g5","c4","k8","g1","f6","c3","k12","g9","a12","c5","g10","k3","c2","c9","c11","c1","c6","c7"];
+    const work = filter === 'All' ? order.map(id => allWork.find(w => w.id === id)) : allWork.filter(w => w.cat === filter);
+    const coverage = ['Photography', 'Video', 'Drone'].map(l => ({ label: l, toggle: () => this.setState(s => ({ cov: { ...s.cov, [l]: !s.cov[l] } })), bg: cov[l] ? '#1e1c19' : '#fff', color: cov[l] ? '#fbf8f2' : '#1e1c19', border: cov[l] ? '#1e1c19' : '#d9d1c0' }));
+    return {
+      nav, services, serviceDetail, filters, work, coverage,
+      insta: [{"id":1,"src":"img/photos-1791944825481-8bpx.jpg"},{"id":2,"src":"img/photos-1791944067423-aw50.jpg"},{"id":3,"src":"img/photos-1791944825573-o2p2.jpg"},{"id":4,"src":"img/photos-1791944825559-esun.jpg"},{"id":5,"src":"img/photos-1791944067434-kdds.jpg"},{"id":6,"src":"img/photos-1791944832036-6tv3.jpg"}],
+      showInstagram: this.props.showInstagram ?? true,
+      isHome: page === 'home', isServices: page === 'services', isPortfolio: page === 'portfolio', isContact: page === 'contact',
+      goHome: () => this.go('home'), goServices: () => this.go('services'), goPortfolio: () => this.go('portfolio'), goContact: () => this.go('contact'),
+      sent, notSent: !sent,
+      submit: async e => {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        if (fd.get('_honey')) return;
+        const data = Object.fromEntries(fd.entries()); delete data._honey;
+        data.coverage = Object.keys(this.state.cov).filter(k => this.state.cov[k]).join(', ') || 'Not specified';
+        data._subject = 'New enquiry — ' + (data.event_type || 'Event') + (data.event_date ? ' · ' + data.event_date : '');
+        data._template = 'table'; data._replyto = data.email; data._captcha = 'false';
+        this.setState({ sending: true, err: false });
+        try {
+          const r = await fetch('https://formsubmit.co/ajax/cinematicwinnipeg@gmail.com', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) });
+          const j = await r.json().catch(() => ({}));
+          if (!r.ok || j.success === false || j.success === 'false') throw new Error('fail');
+          this.setState({ sent: true, sending: false });
+        } catch (x) { this.setState({ sending: false, err: true }); }
+      },
+      sendLabel: this.state.sending ? 'Sending…' : 'Send enquiry',
+      err: !!this.state.err,
+      reset: () => this.setState({ sent: false })
+    };
+  }
+}
+</script>
+</body>
+</html>
